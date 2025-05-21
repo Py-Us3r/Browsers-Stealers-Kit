@@ -1,12 +1,11 @@
 from Crypto.Cipher import AES
+import sys
 
 
+#result="1|https://www.instagram.com/|testing|763130bdf32f7f15f0e0d465d1d9efddfea8cfe8c9888528fc747d2465e229b1332a015a5e0e|01fdfe3de68aa38ae2a417d0853264dae9daf48eae6be2cd72eb6b105eb77ac7"
 
-result="1|https://www.instagram.com/|testing|763130bdf32f7f15f0e0d465d1d9efddfea8cfe8c9888528fc747d2465e229b1332a015a5e0e|01fdfe3de68aa38ae2a417d0853264dae9daf48eae6be2cd72eb6b105eb77ac7"
-## CHANGE THIS LINE TO YOUR DATA
 
-result="1|https://www.instagram.com/|testing|763130bdf32f7f15f0e0d465d1d9efddfea8cfe8c9888528fc747d2465e229b1332a015a5e0e|2|https://es-es.facebook.com/login/|test|763130aa62f05764735ecd6085e36c67150040d12d683a74c7c1e8e2bd6c6ab180c812||01fdfe3de68aa38ae2a417d0853264dae9daf48eae6be2cd72eb6b105eb77ac7"
-
+result=sys.argv[1]
 secret_key=result.split("|")[-1]
 url=result.split("|")[1:][:-1][::4]
 user=result.split("|")[2:][::4]
